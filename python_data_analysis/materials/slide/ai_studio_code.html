@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>컴퓨터와 파이썬의 세계</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/reveal.js/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/reveal.js/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/reveal.js/dist/theme/black.css"
+      id="theme"
+    />
+    <style>
+      /* Python official colors: Blue #3776AB and Yellow #FFD43B */
+      .reveal h1,
+      .reveal h2,
+      .reveal h3,
+      .reveal h4,
+      .reveal h5,
+      .reveal h6 {
+        color: #3776ab; /* Python Blue */
+        font-size: 34pt;
+      }
+      .reveal p,
+      .reveal li {
+        font-size: 16pt;
+        writing-mode: horizontal-tb;
+      }
+      .reveal .blue-bold {
+        color: #3776ab; /* Python Blue */
+        font-weight: bold;
+      }
+      .reveal .yellow-bold {
+        color: #ffd43b; /* Python Yellow */
+        font-weight: bold;
+      }
+      .reveal section img {
+        margin-top: 20px;
+        max-width: 80%;
+        height: auto;
+      }
+      .reveal .slides section.has-dark-background {
+        background-color: #1a1a1a;
+      }
+      .reveal .fragment {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+      }
+      .reveal .fragment.visible {
+        opacity: 1;
+      }
+      .reveal p .fragment {
+        position: absolute;
+      }
+      .reveal p .fragment:not(.visible) ~ * {
+        visibility: visible;
+      }
+      .strikethrough-on-click {
+        text-decoration: none;
+        transition: text-decoration 0.3s ease-in-out;
+      }
+      .strikethrough-on-click.visible {
+        text-decoration: line-through;
+      }
+      .reveal .r-frame {
+        border: 2px solid #3776ab; /* Python Blue border */
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          rgba(55, 118, 171, 0.1) 0%,
+          rgba(255, 212, 59, 0.1) 100%
+        );
+      }
+      .reveal table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+      }
+      .reveal th,
+      .reveal td {
+        border: 1px solid #3776ab; /* Python Blue border */
+        padding: 8px;
+        text-align: left;
+      }
+      .reveal th {
+        background: linear-gradient(
+          90deg,
+          rgba(55, 118, 171, 0.3) 0%,
+          rgba(255, 212, 59, 0.3) 100%
+        );
+        color: #ffd43b; /* Python Yellow text */
+        font-weight: bold;
+      }
+      .reveal .highlight {
+        color: #ffd43b; /* Python Yellow */
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 212, 59, 0.5);
+        padding: 0 5px;
+      }
+      /* Python-themed accent for special elements */
+      .reveal .python-accent {
+        background: linear-gradient(
+          90deg,
+          #3776ab 0%,
+          #ffd43b 50%,
+          #3776ab 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1: Title Slide -->
+        <section>
+          <img
+            src="./img/python-logo.png"
+            alt="Python Logo"
+            style="
+              width: 300px;
+              margin-bottom: 30px;
+              /* background: rgba(255, 255, 255, 0.9); */
+              padding: 20px;
+              border-radius: 15px;
+            "
+          />
+          <h1 class="blue-bold">
+            <span class="highlight">컴퓨터</span>와
+            <span class="highlight">파이썬</span>의 세계
+          </h1>
+          <p>파이썬으로 컴퓨터와 대화하는 방법 이해하기</p>
+        </section>
+
+        <!-- Slide 2: Computer -->
+        <section>
+          <h2 class="blue-bold">1. Computer</h2>
+          <p>컴퓨터 이해하기</p>
+        </section>
+
+        <!-- Slide 3: 4 Characteristics of Computers -->
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div>
+              <img
+                src="./img/img1.jpg"
+                alt="ENIAC"
+                style="
+                  width: 500px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p>
+                에니악(ENIAC：Electronic Numerical Integrater And Computer),
+                1946
+              </p>
+            </div>
+            <div class="fragment fade-in">
+              <p style="font-size: 90px" class="highlight">30t</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img2.jpg"
+                alt="APPLE1"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p>APPLE I, 1976</p>
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img3.jpg"
+                alt="APPLE1"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p>APPLE Ⅱ, 1977</p>
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img4.jpg"
+                alt="MACINTOSH"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p>APPLE MACINTOSH, 1984</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <img
+              src="./img/img5.jpg"
+              alt="iPhone"
+              style="
+                width: 500px;
+                margin-bottom: 30px;
+                /* background: rgba(255, 255, 255, 0.9); */
+                padding: 20px;
+                border-radius: 15px;
+              "
+            />
+            <p>iPhone, 2007</p>
+          </div>
+        </section>
+        <section>
+          <h2 class="blue-bold">컴퓨터의 5가지 특성</h2>
+          <div style="text-align: left; display: inline-block">
+            <ul style="line-height: 2.5">
+              <li class="fragment fade-in">
+                <span class="blue-bold">정확성 (Accuracy):</span> 주어진 명령을
+                단 하나의 오차 없이 정확하게 수행합니다.
+              </li>
+              <li class="fragment fade-in">
+                <span class="blue-bold">신속성 (Speed):</span> 방대한 양의
+                데이터를 사람이 상상할 수 없는 속도로 빠르게 처리합니다.
+              </li>
+              <li class="fragment fade-in">
+                <span class="blue-bold">대용량성 (Large Memory):</span> 많은
+                양의 정보를 저장하고, 필요할 때 언제든 꺼내 쓸 수 있습니다.
+              </li>
+              <li class="fragment fade-in">
+                <span class="blue-bold">자동성 (Automation):</span> 한 번
+                프로그래밍된 작업을 사람의 개입 없이 스스로 반복 수행합니다.
+              </li>
+              <li class="fragment fade-in">
+                <span class="blue-bold">융통성 (flexibility):</span> 없습니다.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div>
+              <p
+                class="fragment"
+                style="font-size: 60px; color: #ffd43b; margin: 0"
+                data-fragment-index="1"
+              >
+                알잘딱깔센
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div>
+              <p
+                class="fragment strikethrough-on-click"
+                style="font-size: 60px; color: #ffd43b; margin: 0"
+                data-fragment-index="1"
+              >
+                알잘딱깔센
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <p style="font-size: 80px; color: #ff0000">ERROR</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: The Era of Python -->
+        <section>
+          <h2 class="blue-bold">2. Python</h2>
+          <p class="fragment fade-in">왜 파이썬인가?</p>
+        </section>
+
+        <section>
+          <h2 class="blue-bold">
+            <span class="highlight">48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21 0a
+          </h2>
+          <ul style="list-style: none; padding: 0">
+            <li class="fragment fade-in">
+              <p style="font-size: 40px">
+                Hello, World!
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img6.png"
+                alt="person"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <h2 class="blue-bold">
+              <span class="highlight">Hello, World!</span>
+            </h2>
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img7-1.png"
+                alt="computer"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img6.png"
+                alt="person"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <h2 class="blue-bold" style="font-size: 30px;">
+                <span class="highlight">Hello, World!</span>
+              </h2>
+              <img
+                src="./img/python-logo.png"
+                alt="Python Logo"
+                style="
+                  width: 100px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <h2 class="blue-bold" style="font-size: 30px;">
+                <span class="highlight">48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21 0a
+              </h2>
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img7-2.png"
+                alt="computer"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img8.jpg"
+                alt="Guido van Rossum"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <ul style="text-align: left; line-height: 2">
+                <li>1991년 네덜란드계 프로그래머 <span class="highlight">귀도 반 로섬</span> 발표</li>
+                <li>좋아하는 코미디인 <span class="highlight">Monty Python's Flying Circus</span>에서 따옴</li>
+                <li><span class="highlight">고급 언어</span> vs 저급언어</li>
+                <li>플랫폼 독립적(Windows, Linux, macOS 등)</li>
+                <li><span class="highlight">동적 타이핑</span> vs 정적 타이핑</li>
+                <li><span class="highlight">인터프리터</span> vs 컴파일</li>
+                <li><span class="highlight">객체 지향(OOP)</span> vs 절차 지향</li>
+                <li>다양한 라이브러리</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img9.png"
+                alt="english"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img10.png"
+                alt="korean"
+                style="
+                  width: 300px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <p>번역 == <span class="highlight">컴파일</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img11.jpg"
+                alt="interpreter"
+                style="
+                  width: 800px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="fragment fade-in">
+              <p style="white-space: nowrap;">통역 == <span class="highlight">인터프리터</span></p>
+              <p style="white-space: nowrap;">"성능 보다 유연성"</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img12.png"
+                alt="procedural programming"
+                style="
+                  width: 800px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p>절차 지향</p>
+            </div>
+            <div class="fragment fade-in">
+              <img
+                src="./img/img13.jpg"
+                alt="OOP programming"
+                style="
+                  width: 800px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p><span class="highlight">객체 지향</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/tiobe.png"
+                alt="tiobe"
+                style="
+                  width: 1200px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Advantages of Python (Infographic-like) -->
+        <section>
+          <h2 class="blue-bold">
+            <span class="highlight">파이썬</span>(Python)의 장점
+          </h2>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 50px;
+            "
+          >
+            <div class="fragment fade-in r-frame" style="width: 30%">
+              <h3>쉬운 문법</h3>
+              <p>
+                영어와 비슷하고 코드가 간결하여 초보자도
+                빠르게 적응할 수 있음
+              </p>
+            </div>
+            <div class="fragment fade-in r-frame" style="width: 30%">
+              <h3>높은 생산성</h3>
+              <p>
+                다양하고 강력한 라이브러리를 활용해 복잡한 프로그램도 빠르고
+                효율적으로 개발할 수 있음
+              </p>
+            </div>
+            <div class="fragment fade-in r-frame" style="width: 30%">
+              <h3>강력한 확장성</h3>
+              <p>
+                데이터 분석, 인공지능(AI), 웹 개발, 업무 자동화 등 거의 모든
+                분야에서 활용 가능
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: What Python Can Do (Table) -->
+        <section>
+          <h2 class="blue-bold">
+            <span class="highlight">파이썬</span>으로 할 수 있는 일
+          </h2>
+          <table class="fragment fade-in" style="font-size: 24px; border-collapse: collapse; width: 85%; margin: 30px auto; box-shadow: 0 4px 15px rgba(55, 118, 171, 0.3);">
+            <thead>
+              <tr>
+                <th style="text-align: center; background: rgba(55, 118, 171, 0.15); color: #3776ab; font-weight: 500; padding: 15px; border: none; border-bottom: 2px solid #3776ab;">분야</th>
+                <th style="text-align: center; background: rgba(55, 118, 171, 0.15); color: #3776ab; font-weight: 500; padding: 15px; border: none; border-bottom: 2px solid #3776ab;">주요 라이브러리 및 프레임워크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr styleion: background 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">업무 자동화</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);;">pywin32, openpyxl, xlwings, PyAutoGui</td>
+              </tr>
+              <tr style="transition: bacound 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">웹 크롤링</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);">beautifulsoup, selenium</td>
+              </tr>
+              <tr style="transition: background 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">응용 프로그램 (GUI)</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);">Tkinter, PyQt5</td>
+              </tr>
+              <tr style="transition: background 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">인공지능 & 머신러닝</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);">tensorflow, pytorch, keras, OpenCV</td>
+              </tr>
+              <tr style="transition: background 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">데이터 분석 & 시각화</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);">pandas, numpy, matplotlib</td>
+              </tr>
+              <tr style="transition: background 0.3s;">
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);"><span class="highlight">웹(서버) 프로그래밍</span></td>
+                <td style="padding: 12px 15px; border: none; border-bottom: 1px solid rgba(55, 118, 171, 0.2);">Django, Flask, FastAPI</td>
+              </tr>
+              <tr style="transition: background 0.3s;">
+                <td style="padding: 12px 15px; border: none;"><span class="highlight">사물 인터넷(IoT)</span></td>
+                <td style="padding: 12px 15px; border: none;">Raspberry Pi</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2 class="blue-bold">
+            <span class="highlight">파이썬</span>의 한계 (할 수 없는 일)
+          </h2>
+          <ul style="list-style: none; padding: 0">
+            
+            <li class="fragment fade-in">
+              <div style="display: flex; align-items: center; gap: 30px;">
+                <img
+                  src="./img/firmware.png"
+                  alt="APPLE1"
+                  style="
+                    width: 260px;
+                    padding: 20px;
+                    border-radius: 15px;
+                    display: block;
+                  "
+                />
+                <div style="flex: 1; text-align: left;">
+                  <h3 style="font-size: 1.2em;"><span class="blue-bold">시스템 밀접 프로그래밍:</span></h3>
+                  <p>
+                    OS 커널, 디바이스 드라이버 등 극도의 속도와 메모리 직접 제어가
+                    필요한 영역 <span class="blue-bold">(C/C++의 영역)</span>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="fragment fade-in" style="display: flex; align-items: center; gap: 30px;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.2em;"><span class="blue-bold">모바일 네이티브 앱:</span></h3>
+                <p>
+                  iOS, Android의 네이티브(Native) 앱 개발
+                  <span class="blue-bold">(Kotlin, Swift의 영역)</span>
+                </p>
+              </div>
+              <img
+                src="./img/mobile_native.png"
+                alt="APPLE1"
+                style="
+                  width: 260px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex !important;
+              flex-direction: row !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 40px !important;
+            "
+          >
+            <div class="fragment fade-in">
+              <img
+                src="./img/img14.png"
+                alt="interpreter"
+                style="
+                  width: 800px;
+                  margin-bottom: 30px;
+                  /* background: rgba(255, 255, 255, 0.9); */
+                  padding: 20px;
+                  border-radius: 15px;
+                "
+              />
+              <p class="fragment fade-in" style="font-size: 1.2em;"><em>간단한 것이라도 당장 탈 수 있는 것!</em></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="./node_modules/reveal.js/dist/reveal.js"></script>
+    <script src="./node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="./node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="./node_modules/reveal.js/plugin/notes/notes.js"></script>
+    <script src="./node_modules/reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+        backgroundTransition: "fade", // none/fade/slide/convex/concave/zoom
+        
+        // 플러그인 등록
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+      });
+    </script>
+  </body>
+</html>
