@@ -2,14 +2,21 @@
 
 ## 📋 교육 개요
 
-- **대상 기업**: 풍산
-- **일정**: 2026년 01월 22일, 23일 (목, 금)
-- **시간**: 09:00 ~ 18:00
-- **학습 목표**: 
+- 🏢 **대상 기업**: 풍산
+- 📅 **일정**: 2026년 01월 22일, 23일 (목, 금)
+- ⏰ **시간**: 09:00 ~ 18:00
+- 🎯 **학습 목표**: 
     - 생성형 AI의 핵심 원리 이해 및 비즈니스 특화 프롬프트 엔지니어링 역량 확보
     - AI 도구를 활용한 체계적인 지식 관리 및 문서 자동화 프로세스 구축
     - n8n 기반의 노코드 워크플로우를 통한 실무 업무 자동화 및 AI 에이전트 설계 능력 배양
-- **활용툴**: Gemini, ChatGPT, n8n, Obsidian, NotebookLM, Google AI Studio 등 교육 커리큘럼에 명시된 주요 AI 솔루션 및 자동화 도구
+- 🧰 **활용툴**: Gemini, ChatGPT, n8n, Obsidian, NotebookLM, Google AI Studio 등 교육 커리큘럼에 명시된 주요 AI 솔루션 및 자동화 도구
+
+## 📚 참고 자료
+
+- 🔗 [Learn Prompting](https://learnprompting.org/docs/introduction)
+- 🔗 [프롬프트 엔지니어링: 개요 및 가이드](https://cloud.google.com/discover/what-is-prompt-engineering)
+- 🔗 [마크다운 가이드](https://www.markdownguide.org)
+- 🔗 [n8n Docs](https://docs.n8n.io/)
 
 ## 🛠️ 사용 기술
 
@@ -35,7 +42,7 @@
 | n8n              |             | 노코드 워크플로우 자동화 도구 |                      | <https://n8n.io/>                                                 |
 
 
-## 📝 교육 과정 커리큘럼 (16교시)
+## 📝 교육 커리큘럼 (16교시)
 
 | 일차 | 주제 | 차수 | 시간 | 세부 주제 | 세부 내용 | 사용기술 |
 | :--- | :--- | :---: | :---: | :--- | :--- | :--- |
