@@ -1,8 +1,7 @@
-<!-- .slide: data-background="./images/taesang_ai.png" -->
+<!-- .slide: data-background="./images/main_ai.png" -->
 
-# AI
-
-### 업무 자동화 교육
+<span class="sophisticated-text xl">AI</span><br/>
+<span class="sophisticated-text">업무 자동화 교육</span>
 
 ---
 
