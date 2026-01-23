@@ -26,7 +26,7 @@ pandoc [입력파일] -o [출력파일]
 ### Markdown을 Word(.docx)로 변환
 가장 많이 사용하는 기능 중 하나입니다.
 ```bash
-pandoc input.md -s -o output.docx
+pandoc input.md -o output.docx
 ```
 
 ### Markdown을 HTML로 변환
