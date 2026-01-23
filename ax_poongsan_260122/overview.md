@@ -18,6 +18,7 @@
 - 🔗 [Learn Prompting](https://learnprompting.org/docs/introduction)
 - 🔗 [프롬프트 엔지니어링: 개요 및 가이드](https://cloud.google.com/discover/what-is-prompt-engineering)
 - 🔗 [마크다운 가이드](https://www.markdownguide.org)
+- 🔗 [AI TOP 100](https://challenge.aitop100.org/)
 
 ## 🛠️ 사용 기술
 
