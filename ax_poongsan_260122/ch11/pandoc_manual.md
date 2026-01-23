@@ -19,24 +19,25 @@ pandoc [입력파일] -o [출력파일]
 ```
 
 - `-o`: Output(출력) 파일을 지정하는 옵션입니다.
+- `-s`: Standalone(독립형) 옵션입니다. 본문 내용만 있는 '조각'이 아니라, 헤더(Header)와 메타데이터가 포함된 **'완성된 형태의 문서'**를 만들어줍니다. HTML이나 PDF 변환 시 필수적인 옵션입니다.
 
 ## 3. 자주 사용하는 변환 예시
 
 ### Markdown을 Word(.docx)로 변환
 가장 많이 사용하는 기능 중 하나입니다.
 ```bash
-pandoc input.md -o output.docx
+pandoc input.md -s -o output.docx
 ```
 
 ### Markdown을 HTML로 변환
 ```bash
-pandoc input.md -o output.html
+pandoc input.md -s -o output.html
 ```
 
 ### Markdown을 PDF로 변환
 PDF 변환은 추가적인 설정이 필요할 수 있습니다. 가장 간단한 방법은 다음과 같습니다.
 ```bash
-pandoc input.md -o output.pdf
+pandoc input.md -s -o output.pdf
 ```
 *참고: PDF 변환을 위해서는 LaTeX 엔진(MiKTeX 등)이나 wkhtmltopdf 같은 도구가 추가로 필요할 수 있습니다.*
 
@@ -45,7 +46,7 @@ pandoc input.md -o output.pdf
 Windows에서 PDF 변환 시 한글이 깨지는 경우가 많습니다. 이를 해결하기 위해 `xelatex` 엔진을 사용하고 한글 폰트를 지정해주어야 합니다.
 
 ```bash
-pandoc input.md -o output.pdf --pdf-engine=xelatex -V mainfont="Malgun Gothic"
+pandoc input.md -s -o output.pdf --pdf-engine=xelatex -V mainfont="Malgun Gothic"
 ```
 
 - `--pdf-engine=xelatex`: PDF 변환 엔진으로 xelatex를 사용합니다.
