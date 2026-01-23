@@ -1,0 +1,13 @@
+[project]
+name = "ch11"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "kaleido>=1.2.0",
+    "nbformat>=5.10.4",
+    "pandas>=3.0.0",
+    "plotly>=6.5.2",
+]

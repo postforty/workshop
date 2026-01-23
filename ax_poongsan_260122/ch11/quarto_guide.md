@@ -13,12 +13,38 @@ Quarto는 자체적으로 문서 변환을 수행하며, 고퀄리티 통계 차
 winget install quarto.quarto
 ```
 
-### 1.2 시각화 도구 설치 (Python)
-세련된 통계 차트를 그리려면 파이썬과 관련 라이브러리가 필요합니다.
+> [!TIP]
+> **설치 후 `quarto` 명령어가 실행되지 않는다면?**
+> 1. **터미널 재시작:** 설치 후 열려 있던 터미널(VS Code 포함)을 모두 닫고 다시 열면 환경 변수가 반영됩니다.
+> 2. **환경 변수 수동 추가:** 여전히 인식이 안 된다면 다음 과정을 진행하세요.
+>    - `Win + R` → `sysdm.cpl` 입력 후 엔터
+>    - **고급** 탭 → **환경 변수** 클릭
+>    - **시스템 변수**의 `Path` 선택 후 **편집** 클릭
+>    - **새로 만들기** 클릭 후 `C:\Program Files\Quarto\bin` 추가 (정석 설치 경로 기준)
+>    - 확인 후 터미널을 다시 엽니다.
+
+### 1.2 시각화 및 다이어그램 도구 설치
+통계 차트(Plotly)와 다이어그램(Mermaid)을 문서에 포함하기 위한 환경 설정입니다.
+
+#### 옵션 A: `uv` 사용 시 (권장)
 ```bash
-# 필수 라이브러리 설치
-pip install pandas plotly jupyter
+# 프로젝트 초기화 (필요시)
+uv init
+
+# 필수 라이브러리 추가 (nbformat, kaleido는 이미지 변환에 필수)
+uv add pandas plotly jupyter kaleido nbformat
 ```
+
+#### 옵션 B: 일반 `pip` 사용 시
+```bash
+pip install pandas plotly jupyter kaleido nbformat
+```
+
+### 1.3 Mermaid 다이어그램 지원
+Quarto는 Mermaid를 기본 내장하고 있으므로 별도의 필터(`mermaid-filter` 등)를 설치할 필요가 없습니다.
+
+- **작동 원리:** HTML로 저장할 때는 브라우저가 다이어그램을 그리며, Word나 PDF로 변환할 때는 Quarto가 시스템의 Chrome이나 Chromium 엔진을 사용하여 자동으로 고화질 이미지로 변환해 삽입합니다.
+- **필수 사항:** 시스템에 Chrome, Edge 등 Chromium 기반 브라우저가 설치되어 있어야 합니다. (대부분의 Windows 환경에서는 이미 설치되어 있어 별도 작업이 필요 없습니다.)
 
 ---
 
@@ -35,7 +61,9 @@ title: "2025 분기 경영 보고서"
 author: "작성자 이름"
 format:
   docx:
-    reference-doc: custom-reference.docx # (선택) 워드 스타일 템플릿
+    echo: false              # 코드는 숨기고 결과만 표시
+    fig-format: png          # 차트를 이미지 형태로 워드에 삽입
+    # reference-doc: custom-reference.docx (선택: 스타일 템플릿 파일이 있을 때만 사용)
 ---
 
 ## 1. 실적 요약
@@ -59,19 +87,26 @@ fig = px.bar(df, x="Quarter", y="Sales",
 
 fig.show()
 ```
-
-## 3. 시스템 아키텍처 (D2 활용)
-D2 문법도 별도 설치 없이 바로 지원합니다.
-
-```d2
-User -> Web Server -> Database: 데이터 조회
-```
 ````
 
 ### 2.2 문서 생성(Render)
 터미널에서 다음 명령어를 입력하면 `report.docx` 파일이 생성됩니다.
+
+#### 옵션 A: `uv` 환경에서 실행 시
 ```bash
+# 기본 실행 (내장 엔진 사용)
+uv run quarto render report.qmd --to docx
+
+```
+
+#### 옵션 B: 일반 환경(pip/글로벌)에서 실행 시
+```bash
+# 기본 실행
 quarto render report.qmd --to docx
+
+
+# 특정 파일만 지정하여 HTML로 변환
+quarto render internal_doc.qmd --to html
 ```
 
 ---
@@ -79,8 +114,8 @@ quarto render report.qmd --to docx
 ## 3. 고퀄리티 보고서를 위한 핵심 팁
 
 ### 3.1 세련된 차트 디자인 (Plotly)
+- **정적 이미지 변환**: 워드나 PDF에서는 대화형 HTML 차트를 넣을 수 없습니다. 코드 마지막에 `fig.show()` 대신 `fig`라고만 적어야 Quarto가 설정한 이미지 형식(PNG 등)으로 자동 변환해 줍니다.
 - **테마 지정**: `fig.update_layout(template="plotly_white")`를 사용하면 배경이 흰색인 깔끔한 비즈니스용 차트가 생성됩니다.
-- **색상 팔레트**: 원색 대신 `#5DADE2`, `#48C9B0` 같은 파스텔/현대적인 헥사 코드를 사용하세요.
 
 ### 3.2 데이터 자동화
 - 코드 블록에서 `pd.read_excel("data.xlsx")`를 사용하면, 엑셀 파일만 업데이트하고 실행해도 보고서 내의 모든 그래프가 자동으로 최신화됩니다.

@@ -3,7 +3,8 @@ title: "2025 분기 경영 보고서"
 author: "작성자 이름"
 format:
   docx:
-    reference-doc: custom-reference.docx # (선택) 워드 스타일 템플릿
+    echo: false          # 코드를 숨기고 결과(그래프 등)만 표시
+    fig-format: png      # 차트를 이미지로 변환
 ---
 
 ## 1. 실적 요약
@@ -11,26 +12,24 @@ format:
 
 ## 2. 분기별 매출 통계
 ```{python}
+#| label: fig-sales
+#| fig-cap: "분기별 매출 성장 추이"
+
 import plotly.express as px
 import pandas as pd
+import plotly.io as pio
 
-# 데이터 로드 (Excel/CSV 등 연동 가능)
+# [중요] 워드 변환 시 차트 누락 방지를 위한 설정
+pio.renderers.default = "png" 
+
 df = pd.DataFrame({
     "Quarter": ["1Q", "2Q", "3Q", "4Q"],
     "Sales": [1200, 1500, 1800, 2100]
 })
 
-# Plotly를 이용한 세련된 막대 그래프
 fig = px.bar(df, x="Quarter", y="Sales", 
              text_auto='.2s', title="매출 성장 추이",
-             color_discrete_sequence=['#45B3E7']) # 현대적인 색상
+             color_discrete_sequence=['#45B3E7'])
 
 fig.show()
-```
-
-## 3. 시스템 아키텍처 (D2 활용)
-D2 문법도 별도 설치 없이 바로 지원합니다.
-
-```d2
-User -> Web Server -> Database: 데이터 조회
 ```
