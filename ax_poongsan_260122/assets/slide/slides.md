@@ -5,13 +5,7 @@
 
 ---
 
-![도트](./images/jobs.jpg)
-
----
-
-<!-- .slide: data-background="./images/connect_dot.png" -->
-
-<span style="color: yellow; font-size: 2em; font-weight: bold; background: #1e4271">CONNECTING THE DOTS</span>
+![폴들라로슈](./images/delaroche_portrait.jpg)
 
 ---
 
@@ -32,10 +26,6 @@
 #### 기억 ❌
 
 #### 한계 ⭕
-
----
-
-![본질](./images/bicycle.png)
 
 ---
 
