@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recession Consumer Psychology - Dubai Cookie Trend</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            /* overflow: hidden; */
+            /* Removed to allow content to scroll if needed, though slide-container will still fill viewport */
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .slide-container {
+            width: 100%;
+            min-height: 100vh;
+            /* Changed from fixed height to min-height to allow content to expand if necessary */
+            position: relative;
+            background-color: rgb(250, 251, 248);
+            overflow: auto;
+            /* Changed to auto to allow scrolling within the container if content exceeds viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-title {
+            font-size: min(3.8vw, 48px);
+            font-weight: 700;
+            color: #222222;
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        .section-title {
+            font-size: min(1.8vw, 24px);
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .section-text {
+            font-size: min(1.2vw, 16px);
+            color: #444444;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        .top-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 6vh;
+            background-color: rgb(87, 117, 144);
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
+        }
+
+        .bottom-accent {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 5vh;
+            background-color: rgb(87, 117, 144);
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+        }
+
+        .bottom-accent-small {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40%;
+            height: 2.5vh;
+            background-color: rgb(163, 177, 138);
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            z-index: -1;
+        }
+
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: min(5vw, 50px);
+            height: min(5vw, 50px);
+            border-radius: 12px;
+            background-color: rgba(163, 177, 138, 0.2);
+            color: rgb(87, 117, 144);
+            margin-bottom: 15px;
+        }
+
+        .icon-wrapper i {
+            font-size: min(2.5vw, 24px);
+        }
+
+        .grid-item {
+            padding: 4%;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid transparent;
+        }
+
+        .grid-item:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(163, 177, 138, 0.2);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <!-- Logo and Company Name -->
+        <div class="absolute top-8 left-8 flex items-center z-10">
+            <i class="fas fa-chart-pie text-xl mr-2" style="color: rgb(87, 117, 144);"></i>
+            <span class="text-sm md:text-base" style="color: rgb(87, 117, 144); font-weight: 600;">TREND ANALYSIS
+                03</span>
+        </div>
+
+        <!-- Top Accent -->
+        <div class="top-accent"></div>
+
+        <!-- Main Content Layout -->
+        <div class="flex flex-1 h-full px-12 md:px-20 py-16 md:py-24 items-center flex-wrap lg:flex-nowrap">
+            <!-- Left Column - Title -->
+            <div class="w-full lg:w-1/3 pr-0 lg:pr-12 lg:pr-20 mb-8 lg:mb-0">
+                <h1 class="main-title mb-8">
+                    불황기 소비 심리:<br />
+                    <span style="color: rgb(87, 117, 144);">스몰 럭셔리</span>와<br />
+                    통제 가능한<br />
+                    행복
+                </h1>
+                <p class="section-text text-gray-500 font-medium">
+                    거시적 경제 불안 속에서 개인은 즉각적인 보상과 성취감을 주는 '미시적 집착' 소비에 집중합니다. 스스로 통제 가능한 영역에서의 작은 사치를 통해 자존감을 회복합니다.
+                </p>
+                <div class="mt-8 w-16 h-1 rounded-full" style="background-color: rgb(163, 177, 138);"></div>
+            </div>
+
+            <!-- Right Column - Grid of Consumption Types -->
+            <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 content-center">
+                <!-- Comfort Seeking -->
+                <div class="grid-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h2 class="section-title mb-3">일상 위로형</h2>
+                    <p class="section-text">
+                        1만 원 내외의 디저트와 같이 비교적 부담 없는 비용으로 즉각적인 심리적 안식과 위로를 얻는 '작은 사치' 소비입니다.
+                    </p>
+                </div>
+
+                <!-- Achievement Oriented -->
+                <div class="grid-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h2 class="section-title mb-3">도전 성취형</h2>
+                    <p class="section-text">
+                        '오픈런'이나 '두케팅'처럼 치열한 경쟁을 뚫고 희소한 제품을 획득함으로써 사회적 효능감을 느낍니다.
+                    </p>
+                </div>
+
+                <!-- Practical Rationality -->
+                <div class="grid-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h2 class="section-title mb-3">실용 합리형</h2>
+                    <p class="section-text">
+                        불확실한 미래에 대비해 불필요한 지출을 통제하고, 가성비와 효율을 극대화하여 심리적 안정감을 확보하는 합리적 소비입니다.
+                    </p>
+                </div>
+
+                <!-- Scarcity & Reward -->
+                <div class="grid-item">
+                    <div class="icon-wrapper">
+                        <i class="far fa-gem"></i>
+                    </div>
+                    <h2 class="section-title mb-3">희소 보상형</h2>
+                    <p class="section-text">
+                        한정판이나 특별한 콜라보 제품 등 남들과 다른 독특한 경험을 소유하며 자존감을 높이고 스스로에게 보상합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Accents -->
+        <div class="bottom-accent-small"></div>
+        <div class="bottom-accent"></div>
+    </div>
+    <script>
+        document.addEventListener('keydown', (e) => {
+            window.parent.postMessage({ type: 'keydown', key: e.key }, '*');
+        });
+    </script>
+</body>
+
+</html>
