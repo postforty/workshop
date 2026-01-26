@@ -18,7 +18,7 @@ LLM(대규모 언어 모델)은 단어의 의미를 숫자로 변환하여 다�
 
 각 숫자는 단어의 특정 의미적 특성을 나타내며, 이 숫자들의 조합으로 단어의 의미를 표현합니다.
 
-![벡터공간](../../assets/images/vector_space.png)
+![벡터공간](../../assets/slide/images/vector_space.png)
 
 ## 핵심 개념: 거리와 방향
 
