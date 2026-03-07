@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Ice Breaking Slides</title>
+
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css" />
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" />
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css" />
+  <style>
+    .sophisticated-text {
+      /* 수평 그라데이션: 사이언 -> 블루 -> 퍼플 */
+      background: linear-gradient(90deg, #00FFFF 0%, #2196F3 50%, #9C27B0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      font-family: 'Pretendard', sans-serif;
+      font-size: 1.5em;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      display: inline-block;
+
+      /* 입체적 베벨(Bevel) 및 하이테크 글로우 효과 */
+      filter:
+        drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8)) drop-shadow(-1px -1px 0px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
+
+      /* 가독성을 위한 패딩 가로 보정 */
+      padding: 0 10px;
+    }
+
+    .sophisticated-text.xl {
+      font-size: 2.25em;
+      /* 1.5em의 1.5배 */
+    }
+
+    .reveal section p {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* 이미지가 있는 p 태그 내부 정렬 보강 */
+    .reveal section img {
+      display: inline-block;
+      /* inline-block으로 변경하여 text-align 영향을 받게 함 */
+      vertical-align: middle;
+      margin: 0 auto;
+      max-width: 95%;
+      max-height: 85vh;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 슬라이드 섹션 자체의 중앙 정렬 보조 */
+    .reveal .slides section {
+      height: 100%;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Load external markdown file -->
+      <section data-markdown="slides.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+      </section>
+    </div>
+  </div>
+
+  <script src="node_modules/reveal.js/dist/reveal.js"></script>
+  <script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+  <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="node_modules/reveal.js/plugin/zoom/zoom.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      center: true,
+      width: 1280,
+      height: 720,
+      margin: 0.04,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+    });
+  </script>
+</body>
+
+</html>
